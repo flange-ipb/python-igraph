@@ -1,6 +1,8 @@
 name: Build and test, upload to PyPI on release
 
-on: [push, pull_request]
+on:
+  workflow_dispatch:
+
 env:
   CIBW_TEST_COMMAND: "cd {project} && python -m pytest tests"
   CIBW_TEST_EXTRAS: "test"
@@ -22,6 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ref: develop
           submodules: true
           fetch-depth: 0
 
@@ -57,6 +60,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ref: develop
           submodules: true
           fetch-depth: 0
 
@@ -100,6 +104,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ref: develop
           submodules: true
           fetch-depth: 0
 
@@ -166,6 +171,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ref: develop
           submodules: true
           fetch-depth: 0
 
@@ -222,6 +228,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          ref: develop
           submodules: true
           fetch-depth: 0
 
